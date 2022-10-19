@@ -4,7 +4,9 @@ const express = require('express');
 const { sequelize } = require('./db/models');
 
 const configApp = require('./config/serverConfig');
-
+const Album = require('./view/Album');
+const LoadPhoto = require('./view/LoadPhoto');
+const fileMiddleWare = require('./middleware/multer')
 // подключение роутеров
 
 const app = express();
@@ -14,6 +16,12 @@ const PORT = process.env.PORT ?? 3000;
 configApp(app);
 
 // запуск роутеров
+app.get('/photos', (req, res) => res.renderComponent(Album))
+app.get('/upload', (req, res) => res.renderComponent(LoadPhoto))
+app.post('/upload', fileMiddleWare.single('image'), (req, res) => {
+  res.send('Фото загружено!')
+})
+
 
 app.listen(PORT, async () => {
   try {
