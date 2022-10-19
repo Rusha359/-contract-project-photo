@@ -11,6 +11,7 @@ const registrationRouter = require('./routes/registrationRouter');
 const loginPageRouter = require('./routes/loginPageRouter');
 const profile = require('./routes/profile');
 const editProfile = require('./routes/editProfile');
+const uploadRouter = require('./routes/uploadRouter');
 
 const app = express();
 
@@ -20,7 +21,7 @@ configApp(app);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // запуск роутеров
-
+app.use('/upload', uploadRouter);
 app.use('/albums', albumsRouter);
 app.use('/', homePageRouter);
 app.use('/registration', registrationRouter);
