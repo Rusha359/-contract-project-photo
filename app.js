@@ -4,8 +4,7 @@ const express = require('express');
 const { sequelize } = require('./db/models');
 
 const configApp = require('./config/serverConfig');
-const Album = require('./view/Album');
-const LoadPhoto = require('./view/LoadPhoto');
+const uploadRouter = require('./routes/uploadRouter');
 const albumsRouter = require('./routes/albumsRouter');
 const homePageRouter = require('./routes/homePageRouter');
 const registrationRouter = require('./routes/registrationRouter');
@@ -19,7 +18,7 @@ const PORT = process.env.PORT ?? 3000;
 configApp(app);
 
 // запуск роутеров
-
+app.use('/upload', uploadRouter);
 app.use('/albums', albumsRouter);
 
 app.use('/', homePageRouter);
