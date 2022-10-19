@@ -16,17 +16,17 @@ module.exports = {
         },
       },
       comment: {
-        allowNull: false,
+        //allowNull: false,
         type: Sequelize.TEXT,
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
+      // createdAt: {
+      //   allowNull: false,
+      //   type: Sequelize.DATE,
+      // },
+      // updatedAt: {
+      //   allowNull: false,
+      //   type: Sequelize.DATE,
+      // },
     });
   },
   async down(queryInterface, Sequelize) {
