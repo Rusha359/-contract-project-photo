@@ -11,6 +11,11 @@ function Navbar({ user }) {
             </a>
           </li>
           <li className="nav-item">
+            <a className="nav-link active" aria-current="page" href={`/profile/${user.id}`}>
+              личный кабинет
+            </a>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="#">
               Добавить фото
             </a>

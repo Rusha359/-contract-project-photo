@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function LoginPage({user}) {
+function LoginPage({ user }) {
   return (
     <Layout user={user}>
       <div className="container-fluid">

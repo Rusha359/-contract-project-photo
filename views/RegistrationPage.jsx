@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function RegistrationPage({user}) {
+function RegistrationPage() {
   return (
-    <Layout user={user}>
+    <Layout>
       <div className="container-fluid">
         <div className="offset-md-4 col-md-4 offset-sm-3 col-sm-6">
           <div className="form-container">

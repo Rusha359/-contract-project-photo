@@ -1,51 +1,27 @@
 const React = require('react');
 const Layout = require('./Layout');
-// const AlbumCard = require('./AlbumCard');
 
-function UserAlbums({ album }) {
+function UserAlbums({ albums }) {
+  console.log(albums);
   return (
-    <Layout>
-      <form action="/albums">
-        <div className="row row-cols-1 row-cols-md-2 g-4">
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Album 1</h5>
-                <p className="card-text">Comments</p>
-                <button type="button">Посмотреть альбом</button>
-              </div>
+    <Layout albums={albums}>
+      <div className="row row-cols-1 row-cols-md-2 g-4">
+        {albums.map((album) => (
+          <div
+            key={album.id}
+            className="js-answer card card-body align-items-center"
+            style={{ width: '12rem' }}
+          >
+            <img src={album.title_img} className="card-img-top" alt={album.title} />
+            <div className="card-body">
+              <h5 className="card-title">{album.title}</h5>
             </div>
+            <a href={`/albums/${album.id}`} className="btn btn-outline-secondary" key={album.id}>
+              Посмотреть альбом
+            </a>
           </div>
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Album 2</h5>
-                <p className="card-text">Comments</p>
-                <button type="button">Посмотреть альбом</button>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Album 3</h5>
-                <p className="card-text">Comments</p>
-                <button type="button">Посмотреть альбом</button>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card">
-
-              <div className="card-body">
-                <h5 className="card-title">Album 4</h5>
-                <p className="card-text">Comments</p>
-                <button type="button">Посмотреть альбом</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
+        ))}
+      </div>
     </Layout>
   );
 }
