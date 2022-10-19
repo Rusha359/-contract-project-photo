@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Album extends Model {
     /**
@@ -9,22 +9,32 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
-      // define association here
+    static associate({ User, Photo }) {
+      Album.User = Album.belongsTo(User, { foreignKey: 'user_id' });
+      Album.Photo = Album.hasMany(Photo, { foreignKey: 'album_id' });
     }
   }
   Album.init({
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
     visibility: {
       allowNull: false,
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
     },
     user_id: {
-      allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Users',
+        key: 'id',
+      },
     },
     title: {
       allowNull: false,
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
     },
   }, {
     sequelize,
