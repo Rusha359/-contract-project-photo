@@ -11,6 +11,7 @@ function Layout({ children, user }) {
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/style.css" />
         <script defer src="/js/bootstrap.bundle.min.js" />
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" />
         <title>Foto</title>
       </head>
       <Navbar user={user} />

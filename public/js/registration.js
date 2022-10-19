@@ -5,6 +5,7 @@ if (registration) {
   registration.addEventListener('submit', async (event) => {
     event.preventDefault();
     const { name, email, password, confirmPassword } = event.target;
+    
 
     const response = await fetch('/registration', {
       method: 'POST',
@@ -18,9 +19,10 @@ if (registration) {
         confirmPassword: confirmPassword.value,
       }),
     });
-    const data = await response.json();
-    if (data.status === 'error') {
-      regErr.innerHTML = data.message;
+    const data1 = await response.json();
+
+    if (data1.status === 'error') {
+      regErr.innerHTML = data1.message;
     } else {
       window.location.assign('/');
     }
@@ -29,7 +31,6 @@ if (registration) {
 
 // вход пользователя
 const login = document.querySelector('.js-login');
-console.log(login);
 const loginError = document.querySelector('js-login-error');
 if (login) {
   login.addEventListener('submit', async (event) => {
