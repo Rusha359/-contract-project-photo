@@ -28,7 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     comment: {
-      allowNull: false,
       type: DataTypes.TEXT,
     },
   }, {
