@@ -1,44 +1,39 @@
-
-const { Model } = require('sequelize');
+const {
+  Model,
+} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class Comment_photo extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-
-    static associate({ Album }) {
-      User.Album = User.hasMany(Album, { foreignKey: 'user_id' });
+    static associate({ Photo }) {
+      Comment_photo.Photo = Comment_photo.belongsTo(Photo, { foreignKey: 'photo_id' });
     }
   }
-  User.init({
+  Comment_photo.init({
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    name: {
-      allowNull: false,
-      type: DataTypes.TEXT,
+    photo_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Photos',
+        key: 'id',
+      },
     },
-    email: {
-      allowNull: false,
-      type: DataTypes.TEXT,
-    },
-    password: {
-      allowNull: false,
-      type: DataTypes.TEXT,
-    },
-    avatar: {
+    comment: {
       allowNull: false,
       type: DataTypes.TEXT,
     },
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'Comment_photo',
   });
-  return User;
+  return Comment_photo;
 };
