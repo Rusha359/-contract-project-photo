@@ -6,6 +6,7 @@ const { sequelize } = require('./db/models');
 const configApp = require('./config/serverConfig');
 
 // подключение роутеров
+const albumsRouter = require('./routes/albumsRouter');
 
 const app = express();
 
@@ -14,6 +15,7 @@ const PORT = process.env.PORT ?? 3000;
 configApp(app);
 
 // запуск роутеров
+app.use('/albums', albumsRouter);
 
 app.listen(PORT, async () => {
   try {
