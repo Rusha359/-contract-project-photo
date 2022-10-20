@@ -5,7 +5,6 @@ if (registration) {
   registration.addEventListener('submit', async (event) => {
     event.preventDefault();
     const { name, email, password, confirmPassword } = event.target;
-    
 
     const response = await fetch('/registration', {
       method: 'POST',
@@ -31,7 +30,8 @@ if (registration) {
 
 // вход пользователя
 const login = document.querySelector('.js-login');
-const loginError = document.querySelector('js-login-error');
+const loginError = document.querySelector('.js-login-error');
+console.log(loginError);
 if (login) {
   login.addEventListener('submit', async (event) => {
     event.preventDefault();

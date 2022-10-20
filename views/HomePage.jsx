@@ -45,21 +45,7 @@ function HomePage({ user }) {
         </>
       ) : (
         <div className="container">
-          <div className="list-group">
-            <a
-              href="/login"
-              className="list-group-item list-group-item-action list-group-item-primary"
-            >
-              Войти
-            </a>
-
-            <a
-              href="/registration"
-              className="list-group-item list-group-item-action list-group-item-success"
-            >
-              Зарегистрироваться
-            </a>
-          </div>
+          <h1>публичные альбомы</h1>
         </div>
       )}
     </Layout>

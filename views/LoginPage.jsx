@@ -34,8 +34,8 @@ function LoginPage({ user }) {
                 Войти
               </button>
             </form>
+            <div className="js-login-error" />
           </div>
-          <div className="js-login-error" />
         </div>
       </div>
       <script defer src="/js/registration.js" />

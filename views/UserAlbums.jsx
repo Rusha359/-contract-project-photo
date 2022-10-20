@@ -1,10 +1,10 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function UserAlbums({ albums }) {
+function UserAlbums({ albums, user }) {
   console.log(albums);
   return (
-    <Layout albums={albums}>
+    <Layout albums={albums} user={user}>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {albums.map((album) => (
           <div
