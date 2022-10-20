@@ -11,7 +11,9 @@ const registrationRouter = require('./routes/registrationRouter');
 const loginPageRouter = require('./routes/loginPageRouter');
 const profile = require('./routes/profile');
 const editProfile = require('./routes/editProfile');
-const photosRouter = require('./routes/photosRouter');
+const uploadRouter = require('./routes/uploadRouter');
+const createAlbum = require('./routes/createAlbum');
+const createAlbumPage = require('./routes/createAlbumPage');
 
 const app = express();
 
@@ -21,14 +23,15 @@ configApp(app);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // запуск роутеров
-
+app.use('/mynewalbum', createAlbumPage);
+app.use('/newalbum', createAlbum);
+app.use('/upload', uploadRouter);
 app.use('/albums', albumsRouter);
 app.use('/', homePageRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginPageRouter);
 app.use('/profile', profile);
 app.use('/edit', editProfile);
-app.use('/albums/:id', photosRouter);
 
 app.listen(PORT, async () => {
   try {
