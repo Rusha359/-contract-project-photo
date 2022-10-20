@@ -14,7 +14,7 @@ function Navbar({ user }) {
       {user ? (
         <ul className="nav">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/albums">
+            <a className="nav-link active" aria-current="page" href={`/albums/${user.id}`}>
               Мои альбомы
             </a>
           </li>

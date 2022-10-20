@@ -2,17 +2,20 @@ const React = require('react');
 const Layout = require('./Layout');
 
 function Profile({ user }) {
-  console.log(user)
   return (
     <Layout user={user}>
       <main className="">
         <div className="container-xxl row justify-content-center align-items-center">
           <div className="card" style={{ width: '18rem' }}>
-            <img
-              className="card-img-top"
-              alt="..."
-              src={`/${user.avatar}`}
-            />
+            {user.avatar ? (
+              <img className="card-img-top" alt="userAvatar" src={`/${user.avatar}`} />
+            ) : (
+              <img
+                className="card-img-top"
+                alt="avatar"
+                src="https://st2.depositphotos.com/4398873/6568/v/950/depositphotos_65685523-stock-illustration-running-man-logo.jpg"
+              />
+            )}
             <div className="card-body">
               <h5 className="card-title">Ваш профиль</h5>
               <p className="card-text"></p>
