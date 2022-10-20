@@ -1,22 +1,26 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function FormAddPhoto({ user }) {
+function FormAddPhoto({ user, albumsId }) {
   return (
     <Layout user={user}>
       <form
         id="formAddPhoto"
-        action={`/addphoto/${user.id}`}
+        action={`/photo/add/albums/${albumsId}`}
         encType="multipart/form-data"
-        data-id={user.id}
+        data-id={albumsId}
       >
-        <div class="mb-3">
-          <label for="formFileMultiple" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="formFileMultiple" className="form-label">
             Multiple files input example
           </label>
-          <input class="form-control" type="file" id="formFileMultiple" multiple />
+          <input className="form-control" name="file" type="file" id="formFileMultiple" multiple />
         </div>
+        <button type="submit" className="btn btn-outline-primary">
+          Primary
+        </button>
       </form>
+      <script defer src="/js/addPhoto.js" />
     </Layout>
   );
 }

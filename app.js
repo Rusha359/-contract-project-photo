@@ -32,9 +32,8 @@ app.use('/registration', registrationRouter);
 app.use('/login', loginPageRouter);
 app.use('/profile', profile);
 app.use('/edit', editProfile);
-app.use('/albums', photosRouter);
+app.use('/photo', photosRouter);
 app.use('/vis', visibilityRouter);
-
 
 app.listen(PORT, async () => {
   try {
