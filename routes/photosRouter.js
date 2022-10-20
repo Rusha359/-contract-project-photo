@@ -1,12 +1,38 @@
-const photosRouter = require('express').Router();
+const router = require('express').Router();
 const { Photo } = require('../db/models');
 const UserPhotos = require('../views/UserPhotos');
+const FormAddPhoto = require('../views/FormAddPhoto');
+const multer = require('../middleware/multer');
+const { Album } = require('../db/models');
 
-photosRouter.get('/:id/albums/:id', async (req, res) => {
+// путь /photo/albums/:id
+router.get('/albums/:id', async (req, res) => {
+  const { id } = req.params.id;
 
-  const {id} = req.params.id
-  const photo = await Photo.findAll({ where: { id: album.id } });
-  res.renderComponent(UserPhotos, { });
+  const photos = await Photo.findAll({ where: { album_id: req.params.id } });
+
+  res.renderComponent(UserPhotos, { photos, albumsId: req.params.id });
 });
 
-module.exports = photosRouter;
+// путь /photo/add/albums/:id
+router.get('/add/albums/:id', async (req, res) => {
+  const { id } = req.params.id;
+  res.renderComponent(FormAddPhoto, { albumsId: req.params.id });
+});
+
+// путь /photo/add/albums/:id
+router.post('/add/albums/:id', multer.single('newPhoto'), async (req, res) => {
+  const { id } = req.params.id;
+  console.log(req.file.path, 'req.file.path <------------');
+  console.log(req.file.path, 'req.params.id <------------');
+  try {
+    const newPhoto = await Photo.create({
+      img: req.file.path,
+      album_id: req.params.id,
+    });
+    res.json({ created: true });
+  } catch (err) {
+    res.json({ message: `${err.message}` });
+  }
+});
+module.exports = router;

@@ -1,27 +1,38 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function UserPhotos({ photos, user }) {
+function UserPhotos({ photos, user, albumsId }) {
   return (
-    <Layout photos={photos} user={user}>
+    <Layout photos={photos} user={user} albumsId={albumsId}>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         <p>здесь будут фото</p>
+        <div>
+          {' '}
+          <a
+            href={`/photo/add/albums/${albumsId}`}
+            className="btn btn-outline-secondary p-3 border"
+          >
+            Добавить фотаграфии в альбом
+          </a>
+        </div>
+
         {photos.map((photo) => (
           <div
-            key={photo.id}
+            // key={photo.id}
             className="js-answer card card-body align-items-center"
             style={{ width: '12rem' }}
           >
-            <img src={photo.title_img} className="card-img-top" alt={photo.title} />
+            <img src={`/${photo.img}`} className="card-img-top" alt="#" />
             <div className="photo-body">
-              <h5 className="photo-title">{photo.title}</h5>
+              <h5 className="photo-title">{photo.id}</h5>
             </div>
-            <a href={`/photos/${photo.id}`} className="btn btn-outline-secondary" key={photo.id}>
+            <a href="#" className="btn btn-outline-secondary">
               Посмотреть
             </a>
           </div>
         ))}
       </div>
+      <script defer src="/js/addPhoto.js" />
     </Layout>
   );
 }

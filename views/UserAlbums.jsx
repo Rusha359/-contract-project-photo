@@ -16,19 +16,13 @@ function UserAlbums({ albums, user }) {
               <h5 className="card-title">{album.title}</h5>
             </div>
             <a
-              href={`/albums/${album.id}`}
+              href={`/photo/albums/${album.id}`}
               className="btn btn-outline-secondary p-3 border"
               key={album.id}
             >
               Посмотреть альбом
             </a>
-            <a
-              href={`/addphoto/${album.id}`}
-              className="btn btn-outline-secondary p-3 border"
-              key={album.id}
-            >
-              Добавить фотграфии в альбом
-            </a>
+           
           </div>
         ))}
       </div>
