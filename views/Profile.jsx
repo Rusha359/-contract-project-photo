@@ -6,15 +6,11 @@ function Profile({ user }) {
     <Layout user={user}>
       <main className="">
         <div className="container-xxl row justify-content-center align-items-center">
-          <div className="card" style={{ width: '18rem' }}>
+          <div className="card wrap_images" style={{ width: '18rem' }}>
             {user.avatar !== '#' ? (
               <img className="card-img-top" alt="userAvatar" src={`/${user.avatar}`} />
             ) : (
-              <img
-                className="card-img-top"
-                alt="avatar"
-                src="https://st2.depositphotos.com/4398873/6568/v/950/depositphotos_65685523-stock-illustration-running-man-logo.jpg"
-              />
+              <img className="card-img-top" alt="avatar" src="/img/3577142.png" />
             )}
             <div className="card-body">
               <h5 className="card-title">Ваш профиль</h5>
@@ -33,17 +29,8 @@ function Profile({ user }) {
               data-id={user.id}
             >
               <a href={`/edit/${user.id}`} className="btn btn-success p-3 border">
-                Изменить профиль
+                Изменить аватар
               </a>
-              <button
-                type="button"
-                id="btnDeletProfile"
-                data-url={`/api/edit/${user.id}`}
-                data-id={user.id}
-                className="btn btn-danger p-3 border"
-              >
-                Удалить профиль
-              </button>
             </div>
           </div>
         </div>

@@ -7,15 +7,11 @@ function EditProfile({ user }) {
       <main className="">
         <h2>Внесите изменения</h2>
 
-        <div className="container-xxl input-group">
-          {user.avatar ? (
+        <div className="container-xxl input-group wrap_images">
+          {user.avatar !== '#' ? (
             <img className="card-img-top" alt="userAvatar" src={`/${user.avatar}`} />
           ) : (
-            <img
-              className="card-img-top"
-              alt="avatar"
-              src="https://st2.depositphotos.com/4398873/6568/v/950/depositphotos_65685523-stock-illustration-running-man-logo.jpg"
-            />
+            <img className="card-img-top" alt="avatar" src="/img/3577142.png" />
           )}
           <form
             id="editProfileform"
@@ -25,7 +21,7 @@ function EditProfile({ user }) {
           >
             <div className="mb-3">
               <label htmlFor="formFileMultiple" className="form-label">
-                Multiple files input example
+                Загрузите фотографию
               </label>
               <input
                 className="form-control"

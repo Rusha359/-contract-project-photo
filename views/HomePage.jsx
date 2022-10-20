@@ -6,7 +6,6 @@ function HomePage({ user }) {
     <Layout user={user}>
       {user ? (
         <>
-          <h2>Мои альбомы</h2>
           <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
@@ -17,10 +16,18 @@ function HomePage({ user }) {
                 />
               </div>
               <div className="carousel-item">
-                <img src="..." className="d-block w-100" alt="..." />
+                <img
+                  src="https://funik.ru/wp-content/uploads/2018/10/0a37dbac85e134cfb3a5.jpg"
+                  className="d-block w-100"
+                  alt="..."
+                />
               </div>
               <div className="carousel-item">
-                <img src="..." className="d-block w-100" alt="..." />
+                <img
+                  src="https://funik.ru/wp-content/uploads/2018/10/547c45340245c1650014.jpg"
+                  className="d-block w-100"
+                  alt="..."
+                />
               </div>
             </div>
             <button
