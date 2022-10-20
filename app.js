@@ -15,6 +15,7 @@ const uploadRouter = require('./routes/uploadRouter');
 // const createAlbum = require('./routes/createAlbum');
 const createAlbumPage = require('./routes/createAlbumPage');
 const photosRouter = require('./routes/photosRouter');
+const visibilityRouter = require('./routes/visibilityRouter');
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use('/login', loginPageRouter);
 app.use('/profile', profile);
 app.use('/edit', editProfile);
 app.use('/albums', photosRouter);
+app.use('/vis', visibilityRouter);
 
 app.listen(PORT, async () => {
   try {
