@@ -32,6 +32,7 @@ function UserAlbums({ albums, user }) {
           </div>
         ))}
       </div>
+      <script defer src="/js/viewalbum.js" />
     </Layout>
   );
 }
