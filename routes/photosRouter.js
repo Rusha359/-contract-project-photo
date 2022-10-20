@@ -1,10 +1,12 @@
 const photosRouter = require('express').Router();
-const AlbumCard = require('../views/AlbumCard');
 const { Photo } = require('../db/models');
+const UserPhotos = require('../views/UserPhotos');
 
-photosRouter.get('/:id', async (req, res) => {
-  const photos = await Photo.findAll({ raw: true });
-  res.renderComponent(AlbumCard, { photos });
+photosRouter.get('/:id/albums/:id', async (req, res) => {
+
+  const {id} = req.params.id
+  const photo = await Photo.findAll({ where: { id: album.id } });
+  res.renderComponent(UserPhotos, { });
 });
 
 module.exports = photosRouter;
