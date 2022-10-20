@@ -13,6 +13,8 @@ const profile = require('./routes/profile');
 const editProfile = require('./routes/editProfile');
 const uploadRouter = require('./routes/uploadRouter');
 const createAlbumPage = require('./routes/createAlbumPage');
+const photosRouter = require('./routes/photosRouter');
+const visibilityRouter = require('./routes/visibilityRouter');
 
 const app = express();
 
@@ -30,6 +32,9 @@ app.use('/registration', registrationRouter);
 app.use('/login', loginPageRouter);
 app.use('/profile', profile);
 app.use('/edit', editProfile);
+app.use('/albums', photosRouter);
+app.use('/vis', visibilityRouter);
+
 
 app.listen(PORT, async () => {
   try {
