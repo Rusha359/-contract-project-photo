@@ -6,8 +6,8 @@ function Navbar({ user }) {
       {user ? (
         <ul className="nav">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">
-              Все альбомы пользователя
+            <a className="nav-link active" aria-current="page" href="/albums">
+              Мои альбомы
             </a>
           </li>
           <li className="nav-item">
@@ -16,7 +16,7 @@ function Navbar({ user }) {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="/upload">
               Добавить фото
             </a>
           </li>
