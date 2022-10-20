@@ -2,7 +2,6 @@ const React = require('react');
 const Layout = require('./Layout');
 
 function UserAlbums({ albums, user }) {
-  console.log(albums);
   return (
     <Layout albums={albums} user={user}>
       <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -16,8 +15,19 @@ function UserAlbums({ albums, user }) {
             <div className="card-body">
               <h5 className="card-title">{album.title}</h5>
             </div>
-            <a href={`/albums/${album.id}`} className="btn btn-outline-secondary" key={album.id}>
+            <a
+              href={`/albums/${album.id}`}
+              className="btn btn-outline-secondary p-3 border"
+              key={album.id}
+            >
               Посмотреть альбом
+            </a>
+            <a
+              href={`/addphoto/${album.id}`}
+              className="btn btn-outline-secondary p-3 border"
+              key={album.id}
+            >
+              Добавить фотграфии в альбом
             </a>
           </div>
         ))}

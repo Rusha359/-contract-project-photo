@@ -6,7 +6,17 @@ function EditProfile({ user }) {
     <Layout user={user}>
       <main className="">
         <h2>Внесите изменения</h2>
+
         <div className="container-xxl input-group">
+          {user.avatar ? (
+            <img className="card-img-top" alt="userAvatar" src={`/${user.avatar}`} />
+          ) : (
+            <img
+              className="card-img-top"
+              alt="avatar"
+              src="https://st2.depositphotos.com/4398873/6568/v/950/depositphotos_65685523-stock-illustration-running-man-logo.jpg"
+            />
+          )}
           <form
             id="editProfileform"
             action={`/edit/${user.id}`}

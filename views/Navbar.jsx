@@ -24,8 +24,8 @@ function Navbar({ user }) {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/upload">
-              Добавить фото
+            <a className="nav-link" href={`/mynewalbum/${user.id}`}>
+              Создать новый альбом
             </a>
           </li>
           <li className="nav-item">

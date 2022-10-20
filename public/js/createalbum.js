@@ -17,4 +17,5 @@ album.addEventListener('submit', async (event) => {
         }),
     });
     const data = await responce.json();
+    if(data.)
 });
