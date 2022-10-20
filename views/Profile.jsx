@@ -2,15 +2,16 @@ const React = require('react');
 const Layout = require('./Layout');
 
 function Profile({ user }) {
+  console.log(user)
   return (
     <Layout user={user}>
       <main className="">
         <div className="container-xxl row justify-content-center align-items-center">
           <div className="card" style={{ width: '18rem' }}>
             <img
-              src="/img/—Pngtree—medicine pill capsule drugs tablet_4986373.png"
               className="card-img-top"
               alt="..."
+              src={`/${user.avatar}`}
             />
             <div className="card-body">
               <h5 className="card-title">Ваш профиль</h5>
