@@ -10,10 +10,14 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/:id', multer.single('avatar'), async (req, res) => {
-  const user = await User.findOne({ where: { id: req.params.id } });
-  user.avatar = req.file.path;
-  user.save();
-  res.json({ updated: true, id: user.id });
+  try {
+    const user = await User.findOne({ where: { id: req.params.id } });
+    user.avatar = req.file.path;
+    user.save();
+    res.json({ updated: true, id: user.id });
+  } catch (err) {
+    res.json({ message: `${err.message}` });
+  }
 });
 
 module.exports = router;

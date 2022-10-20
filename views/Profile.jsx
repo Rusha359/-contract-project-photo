@@ -7,7 +7,7 @@ function Profile({ user }) {
       <main className="">
         <div className="container-xxl row justify-content-center align-items-center">
           <div className="card" style={{ width: '18rem' }}>
-            {user.avatar ? (
+            {user.avatar !== '#' ? (
               <img className="card-img-top" alt="userAvatar" src={`/${user.avatar}`} />
             ) : (
               <img

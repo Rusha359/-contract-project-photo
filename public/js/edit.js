@@ -14,4 +14,6 @@ editProfileform.addEventListener('submit', async (event) => {
       'Content-type': 'multipart/form-data',
     },
   });
+
+  window.location.href = `/profile/${id}`;
 });
