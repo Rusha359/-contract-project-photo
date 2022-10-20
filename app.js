@@ -11,6 +11,7 @@ const registrationRouter = require('./routes/registrationRouter');
 const loginPageRouter = require('./routes/loginPageRouter');
 const profile = require('./routes/profile');
 const editProfile = require('./routes/editProfile');
+const photosRouter = require('./routes/photosRouter');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use('/registration', registrationRouter);
 app.use('/login', loginPageRouter);
 app.use('/profile', profile);
 app.use('/edit', editProfile);
+app.use('/albums/:id', photosRouter);
 
 app.listen(PORT, async () => {
   try {
