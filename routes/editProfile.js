@@ -10,12 +10,10 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/:id', multer.single('avatar'), async (req, res) => {
-  // const { file } = req;
-  console.log(typeof req.file.path, '<-------------');
-  const newPhoto = await Photo.create({
-    img: req.file.path,
-    album_id: 1,
-  });
+  const user = await User.findOne({ where: { id: req.params.id } });
+  user.avatar = req.file.path;
+  user.save();
+  res.json({ updated: true, id: user.id });
 });
 
 module.exports = router;
