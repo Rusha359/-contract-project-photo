@@ -1,5 +1,5 @@
 const visibilityRouter = require('express').Router();
-const UserAlbums = require('../views/UserAlbums');
+const VisibilityAlbums = require('../views/VisibilityAlbums');
 const { Album } = require('../db/models');
 
 visibilityRouter.get('/', async (req, res) => {
@@ -10,7 +10,7 @@ visibilityRouter.get('/', async (req, res) => {
     },
   });
 
-  res.renderComponent(UserAlbums, { albums });
+  res.renderComponent(VisibilityAlbums, { albums });
 });
 
 module.exports = visibilityRouter;
