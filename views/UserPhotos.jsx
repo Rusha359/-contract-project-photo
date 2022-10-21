@@ -5,14 +5,13 @@ function UserPhotos({ photos, user, albumsId }) {
   return (
     <Layout photos={photos} user={user} albumsId={albumsId}>
       <div className="row row-cols-1 row-cols-md-2 g-4">
-        <p>здесь будут фото</p>
         <div>
           {' '}
           <a
             href={`/photo/add/albums/${albumsId}`}
-            className="btn btn-outline-secondary p-3 border"
+            className="btn btn-outline-secondary p-3 border js-addPhoto-btn"
           >
-            Добавить фотаграфии в альбом
+            Добавить фотографии в альбом
           </a>
         </div>
 

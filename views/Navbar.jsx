@@ -38,21 +38,20 @@ function Navbar({ user }) {
           </li>
         </ul>
       ) : (
-        <div className="container">
-          <div className="list-group">
-            <a
-              href="/login"
-              className="list-group-item list-group-item-action list-group-item-primary"
-            >
-              Войти
-            </a>
-
-            <a
-              href="/registration"
-              className="list-group-item list-group-item-action list-group-item-success"
-            >
-              Зарегистрироваться
-            </a>
+        <div className="container text-center row">
+          <div className="col">
+            <div className="alert alert-primary" role="alert">
+              <a href="/login" className="btn btn-primary active" aria-current="page">
+                Войти
+              </a>
+              <div className="col">
+                <div className="alert">
+                  <a href="/registration" className="btn btn-primary">
+                    Зарегистрироваться
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

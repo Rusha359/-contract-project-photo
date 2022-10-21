@@ -24,13 +24,13 @@ router.get('/add/albums/:id', async (req, res) => {
 router.post('/add/albums/:id', multer.single('newPhoto'), async (req, res) => {
   const { id } = req.params.id;
   console.log(req.file.path, 'req.file.path <------------');
-  console.log(req.file.path, 'req.params.id <------------');
+  console.log(req.params.id, 'req.params.id <------------');
   try {
     const newPhoto = await Photo.create({
       img: req.file.path,
       album_id: req.params.id,
     });
-    res.json({ created: true });
+    res.status(201).json({ created: true });
   } catch (err) {
     res.json({ message: `${err.message}` });
   }

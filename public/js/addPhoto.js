@@ -1,7 +1,9 @@
 const formAddPhoto = document.querySelector('#formAddPhoto');
 console.log(formAddPhoto);
 
-// fetch на изменение профиля
+// кнопка добавить фото
+
+// fetch добавление фото
 
 formAddPhoto.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -16,4 +18,8 @@ formAddPhoto.addEventListener('submit', async (event) => {
       'Content-type': 'multipart/form-data',
     },
   });
+
+  if (res.status === 201) {
+    // todo фото создано :)
+  }
 });
