@@ -1,15 +1,14 @@
 const React = require('react');
-const Layout = require('./Layout');
 
-function visibilityAlbums({ albums }) {
+function VisibilityAlbums({ albums }) {
   return (
-    <Layout albums={albums}>
-      <div className="row row-cols-1 row-cols-md-2 g-4">
+    <div className="row row-cols-1 row-cols-md-3 g-2 ">
+      <div className="col">
         {albums.map((album) => (
           <div
             key={album.id}
-            className="js-answer card card-body align-items-center"
-            style={{ width: '12rem' }}
+            className="card"
+            style={{ width: '12rem', padding: '20px' }}
           >
             <img src={album.title_img} className="card-img-top" alt={album.title} />
             <div className="card-body">
@@ -21,9 +20,8 @@ function visibilityAlbums({ albums }) {
           </div>
         ))}
       </div>
-      <script defer src="/js/viewalbum.js" />
-    </Layout>
-  )
+    </div>
+  );
 }
 
-module.exports = visibilityAlbums;
+module.exports = VisibilityAlbums;
