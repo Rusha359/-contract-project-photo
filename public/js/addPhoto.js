@@ -1,6 +1,8 @@
 const formAddPhoto = document.querySelector('#formAddPhoto');
 console.log(formAddPhoto);
 
+// кнопка добавить фото
+
 // fetch добавление фото
 
 formAddPhoto.addEventListener('submit', async (event) => {
