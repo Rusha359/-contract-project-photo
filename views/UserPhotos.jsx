@@ -12,7 +12,7 @@ function UserPhotos({ photos, user, albumsId }) {
             href={`/photo/add/albums/${albumsId}`}
             className="btn btn-outline-secondary p-3 border"
           >
-            Добавить фотаграфии в альбом
+            Добавить фотографии в альбом
           </a>
         </div>
 

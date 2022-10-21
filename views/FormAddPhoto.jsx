@@ -12,7 +12,7 @@ function FormAddPhoto({ user, albumsId }) {
       >
         <div className="mb-3">
           <label htmlFor="formFileMultiple" className="form-label">
-            Multiple files input example
+            {/* Multiple files input example */}
           </label>
           <input className="form-control" name="file" type="file" id="formFileMultiple" multiple />
         </div>
