@@ -20,7 +20,7 @@ function Navbar({ user }) {
           </li>
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href={`/profile/${user.id}`}>
-              личный кабинет
+              Личный кабинет
             </a>
           </li>
           <li className="nav-item">
@@ -34,7 +34,7 @@ function Navbar({ user }) {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link disabled">{user.name}</a>
+            <a className="nav-link disabled"> Привет {user.name}</a>
           </li>
         </ul>
       ) : (

@@ -131,3 +131,8 @@ dist
 
 #sessions
 sessions
+
+# user-generated files
+images/**.jpg
+images/**.jpeg
+images/**.png
