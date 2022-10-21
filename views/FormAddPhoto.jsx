@@ -9,6 +9,7 @@ function FormAddPhoto({ user, albumsId }) {
         action={`/photo/add/albums/${albumsId}`}
         encType="multipart/form-data"
         data-id={albumsId}
+        data-userId={user.id}
       >
         <div className="mb-3">
           <label htmlFor="formFileMultiple" className="form-label">

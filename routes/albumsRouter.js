@@ -1,6 +1,5 @@
 const albumsRouter = require('express').Router();
 const UserAlbums = require('../views/UserAlbums');
-// const AlbumCard = require('../views/AlbumCard');
 const { Album } = require('../db/models');
 
 albumsRouter.get('/:id', async (req, res) => {
@@ -10,8 +9,15 @@ albumsRouter.get('/:id', async (req, res) => {
       user_id: req.params.id,
     },
   });
-
-  res.renderComponent(UserAlbums, { albums });
+  const albumsvis = await Album.findAll({
+    raw: true,
+    where: {
+      visibility: 'public',
+    },
+  });
+  // console.log(albumsvis);
+  // res.renderComponent(VisibilityAlbums, { albumsvis }, { doctype: false });
+  res.renderComponent(UserAlbums, { albums, albumsvis });
 });
 
 // albumsRouter.get('/:id', (req, res) => {

@@ -8,7 +8,8 @@ console.log(formAddPhoto);
 formAddPhoto.addEventListener('submit', async (event) => {
   event.preventDefault();
   const { id } = event.target.dataset;
-  console.log(event.target.dataset);
+  const { userId } = event.target.dataset;
+  console.log(userId);
   const file = event.target.file.files[0];
   const data = new FormData();
   data.append('newPhoto', file);
@@ -20,6 +21,6 @@ formAddPhoto.addEventListener('submit', async (event) => {
   });
 
   if (res.status === 201) {
-    // todo фото создано :)
+    window.location.assign(`/photo/albums/${id}`);
   }
 });
