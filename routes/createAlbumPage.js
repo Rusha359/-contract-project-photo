@@ -13,6 +13,7 @@ router.post('/:id', async (req, res) => {
     title,
     title_img: '#',
   });
+  res.json({ status: 'created', message: `альбом ${title} создан` });
 });
 
 module.exports = router;

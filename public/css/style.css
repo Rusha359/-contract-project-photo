@@ -442,3 +442,14 @@ form-container-login {
   width: 100%;
   height: auto;
 }
+
+.container__albums {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin-top: 70px;
+}
+
+p {
+  margin: 0;
+}

@@ -24,6 +24,7 @@ module.exports = function CreateAlbumPage({ user }) {
             <input className="btn btn-primary" type="submit" value="Submit" />
           </section>
         </form>
+        <p className="js-albumcreate" />
       </section>
       <script defer src="/js/createalbum.js" />
     </Layout>

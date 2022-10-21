@@ -9,8 +9,8 @@ visibilityRouter.get('/', async (req, res) => {
       visibility: 'public',
     },
   });
-
-  res.renderComponent(VisibilityAlbums, { albums });
+  console.log(albums);
+  res.renderComponent(VisibilityAlbums, { albums }, { doctype: false });
 });
 
 module.exports = visibilityRouter;

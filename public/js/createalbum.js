@@ -1,4 +1,5 @@
 const album = document.querySelector('.js-newalbum');
+const albumcreated = document.querySelector('.js-albumcreate');
 
 album.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -15,4 +16,7 @@ album.addEventListener('submit', async (event) => {
     }),
   });
   const data = await responce.json();
+  if (data.status === 'created') {
+    albumcreated.innerHTML = data.message;
+  }
 });
